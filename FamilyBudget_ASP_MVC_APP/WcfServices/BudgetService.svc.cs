@@ -1,12 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Activation;
+﻿using System.ServiceModel.Activation;
 using FamilyBudget_ASP_MVC_APP.Dto;
 using FamilyBudget_ASP_MVC_APP.WcfServices.DataContracts;
 using FamilyBudget_ASP_MVC_APP.WcfServices.Interfaces;
 using FamilyBudget_ASP_MVC_APP.WcfServices.Params;
+using Microsoft.Practices.ServiceLocation;
 
 namespace FamilyBudget_ASP_MVC_APP.WcfServices
 {
@@ -18,6 +15,12 @@ namespace FamilyBudget_ASP_MVC_APP.WcfServices
         public BudgetService(BudgetServiceParams budgetServiceParams)
         {
             _budgetServiceParams = budgetServiceParams;
+        }
+
+        public BudgetService()
+            : this(ServiceLocator.Current.GetInstance<BudgetServiceParams>())
+        {
+
         }
 
         public BudgetDto GetBudgetById(int budgetId)
