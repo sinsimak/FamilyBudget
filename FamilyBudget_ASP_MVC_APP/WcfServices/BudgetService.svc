@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="FamilyBudget_ASP_MVC_APP.WcfServices.BudgetService" CodeBehind="BudgetService.svc.cs" %>

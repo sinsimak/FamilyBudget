@@ -115,14 +115,22 @@
     <Compile Include="Controllers\BudgetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestSilverlightController.cs" />
+    <Compile Include="Dto\BudgetDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WcfServices\BudgetService.svc.cs">
+      <DependentUpon>BudgetService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WcfServices\DataContracts\GetBudgetRequest.cs" />
+    <Compile Include="WcfServices\DataContracts\GetBudgetResponse.cs" />
     <Compile Include="WcfServices\HelloWorldService.svc.cs">
       <DependentUpon>HelloWorldService.svc</DependentUpon>
     </Compile>
+    <Compile Include="WcfServices\Interfaces\IBudgetService.cs" />
+    <Compile Include="WcfServices\Params\BudgetServiceParams.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\FamilyBudgetSilverlightApp.xap" />
@@ -191,6 +199,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Silverlight.js" />
+    <Content Include="WcfServices\BudgetService.svc" />
     <Content Include="WcfServices\HelloWorldService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
