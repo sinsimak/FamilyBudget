@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="CustomBinding_HelloWorldService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="../WcfServices/HelloWorldService.svc" binding="customBinding"
+                bindingConfiguration="CustomBinding_HelloWorldService" contract="HelloWorldService.HelloWorldService"
+                name="CustomBinding_HelloWorldService" />
+        </client>
+    </system.serviceModel>
+</configuration>
