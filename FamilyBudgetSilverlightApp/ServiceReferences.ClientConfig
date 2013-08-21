@@ -6,12 +6,26 @@
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
+                <binding name="CustomBinding_IBudgetService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="MetadataExchangeHttpBinding_IBudgetService">
+                    <textMessageEncoding messageVersion="Default" writeEncoding="utf-8" />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
             </customBinding>
         </bindings>
         <client>
             <endpoint address="../WcfServices/HelloWorldService.svc" binding="customBinding"
                 bindingConfiguration="CustomBinding_HelloWorldService" contract="HelloWorldService.HelloWorldService"
                 name="CustomBinding_HelloWorldService" />
+            <endpoint address="../WcfServices/BudgetService.svc" binding="customBinding"
+                bindingConfiguration="CustomBinding_IBudgetService" contract="BudgetServiceReference.IBudgetService"
+                name="CustomBinding_IBudgetService" />
+            <endpoint address="../WcfServices/BudgetService.svc/mex" binding="customBinding"
+                bindingConfiguration="MetadataExchangeHttpBinding_IBudgetService"
+                contract="BudgetServiceReference.IBudgetService" name="MetadataExchangeHttpBinding_IBudgetService" />
         </client>
     </system.serviceModel>
 </configuration>

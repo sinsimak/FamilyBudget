@@ -78,6 +78,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service References\BudgetServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\HelloWorldService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,6 +108,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\BudgetServiceReference\BudgetService.wsdl" />
+    <None Include="Service References\BudgetServiceReference\BudgetService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetServiceReference\BudgetService1.wsdl" />
+    <None Include="Service References\BudgetServiceReference\BudgetService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetServiceReference\BudgetService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetServiceReference\BudgetService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetServiceReference\FamilyBudgetSilverlightApp.BudgetServiceReference.BudgetDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetServiceReference\FamilyBudgetSilverlightApp.BudgetServiceReference.GetBudgetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\HelloWorldService\HelloWorldService.wsdl" />
     <None Include="Service References\HelloWorldService\HelloWorldService.xsd">
       <SubType>Designer</SubType>
@@ -110,6 +135,13 @@
     <None Include="Service References\HelloWorldService\HelloWorldService1.wsdl" />
     <None Include="Service References\HelloWorldService\HelloWorldService1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetServiceReference\BudgetService.disco" />
+    <None Include="Service References\BudgetServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\BudgetServiceReference\configuration.svcinfo" />
+    <None Include="Service References\BudgetServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
@@ -120,6 +152,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BudgetServiceReference\" />
     <WCFMetadataStorage Include="Service References\HelloWorldService\" />
   </ItemGroup>
   <ItemGroup>
