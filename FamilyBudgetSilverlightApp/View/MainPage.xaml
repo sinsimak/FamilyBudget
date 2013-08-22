@@ -18,19 +18,30 @@
         
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         
         <StackPanel Orientation="Horizontal"
                     Grid.Row="0">
-            <Button Content="Load Data"
+            <Button Content="Load Test Data"
                 HorizontalAlignment="Left"
                 Margin="10"
                 VerticalAlignment="Top"
-                Width="101"
+                Width="120"
                 Command="{Binding LoadWordCommand}"/>
             <sdk:Label Content="{Binding TextResult}"/>
-            
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1">
+            <Button Content="Load Budget Name"
+                HorizontalAlignment="Left"
+                Margin="10"
+                VerticalAlignment="Top"
+                Width="120"
+                Command="{Binding LoadBudgetDtoCommand}"/>
+            <sdk:Label Content="{Binding BudgetName}"/>
         </StackPanel>
 
 

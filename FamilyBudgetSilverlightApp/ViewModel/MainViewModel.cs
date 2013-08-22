@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using FamilyBudgetSilverlightApp.BudgetServiceReference;
 using FamilyBudgetSilverlightApp.HelloWorldService;
 
 namespace FamilyBudgetSilverlightApp.ViewModel
@@ -17,6 +18,7 @@ namespace FamilyBudgetSilverlightApp.ViewModel
         public MainViewModel()
         {
             TextResult = "Initial Value";
+            BudgetName = "Initial Value";
         }
 
         private ICommand _loadWordCommand;
@@ -56,6 +58,42 @@ namespace FamilyBudgetSilverlightApp.ViewModel
         private void ProxyOnGetWordCompleted(object sender, GetWordCompletedEventArgs getWordCompletedEventArgs)
         {
             TextResult = getWordCompletedEventArgs.Result;
+        }
+
+        private string _budgetName;
+        public string BudgetName
+        {
+            get { return _budgetName; }
+            set 
+            { 
+                _budgetName = value;
+                NotifyPropertyChanged("BudgetName");
+            }
+        }
+
+        private ICommand _loadBudgetDtoCommamd;
+        public ICommand LoadBudgetDtoCommand
+        {
+            get
+            {
+                if (_loadBudgetDtoCommamd == null)
+                {
+                    _loadBudgetDtoCommamd = new Command(LoadBudgetDto);
+                }
+                return _loadBudgetDtoCommamd;
+            }
+        }
+
+        private void LoadBudgetDto()
+        {
+            BudgetServiceClient proxy = new BudgetServiceClient();
+            proxy.GetBudgetByIdCompleted += ProxyOnGetBudgetByIdCompleted;
+            proxy.GetBudgetByIdAsync(1);
+        }
+
+        private void ProxyOnGetBudgetByIdCompleted(object sender, GetBudgetByIdCompletedEventArgs getBudgetByIdCompletedEventArgs)
+        {
+            BudgetName = getBudgetByIdCompletedEventArgs.Result.Name;
         }
     }
 }
